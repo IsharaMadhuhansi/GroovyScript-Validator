@@ -22,8 +22,15 @@ textarea {
   padding: $textarea-vertical-padding $pag-space-sm;
   border-radius: $pag-border-radius-sm;
   min-height: $form-item-height;
-  width: 100%;
+  width: 50%;
   resize: none;
+
+  margin: 10px;
+  height: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
 
   &:focus {
     box-shadow: $shadow-focus;    
@@ -46,21 +53,41 @@ textarea {
   }
 }
 
+
+.validate-button {
+  margin-left: 770px;
+  margin-top: 10px;
+  background-color: $pag-color-primary-base;
+  color: $pag-color-palette-white;
+  border: none;
+  padding: $pag-space-xs $pag-space-sm;
+  border-radius: $pag-border-radius-sm;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($pag-color-primary-base, 10%);
+  }
+}
+
+.header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $pag-color-text-default;
+  margin-bottom: $pag-space-md;
+  margin-left: 10px;
+  font-family: None;
+}
+
 .pag-textarea-resizable {
   resize: vertical;
 }
 
-label {
-  display: block;
-  font-family: $pag-font-family;
-  font-size: $pag-font-size-md;
+.label {
+  margin-top: $pag-space-xs;
+  padding: $pag-space-xs $pag-space-sm;
+  font-size: 15px;
   color: $pag-color-text-secondary;
-  line-height: $pag-line-height-md;
-  margin-bottom: $pag-space-xxxs;
-
-  .pag-textarea-required {
-    color: $pag-color-error-base;
-  }
+  margin-left: 10px;
 }
 
 .pag-textarea-helper-text {
@@ -138,11 +165,9 @@ label {
   height: 365px;
 }
 
-#editing-textarea,
 #highlighting-pre {
   margin: 10px;
   padding: 10px;
-  width: calc(100% - 17px);
   height: 350px;
   position: absolute;
   top: 0;
@@ -152,7 +177,6 @@ label {
   white-space: nowrap;
 }
 
-#editing-textarea,
 #highlighting-pre,
 #highlighting-pre * {
   line-height: 1.5;

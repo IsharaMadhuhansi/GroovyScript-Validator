@@ -6,6 +6,7 @@ export default function TextArea() {
   return (
     <>
       <div className="host">
+      <h2 className="header">Groovy Script Compiler</h2>
         <div className="container">
           <textarea
             id="editing-textarea"
@@ -13,6 +14,10 @@ export default function TextArea() {
           ></textarea>
         </div>
       </div>
+      <span className="label">tjgutgitg</span>
+<button className="validate-button" onClick={() => alert("Validation logic goes here")}>
+  Validate
+</button>
     </>
   );
 }
