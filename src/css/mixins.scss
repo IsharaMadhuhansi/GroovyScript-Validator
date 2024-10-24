@@ -1,0 +1,31 @@
+@mixin border-radius($radius) {
+  @if $radius > 0 {
+    border-radius: $radius;
+  }
+}
+
+@mixin border-top-radius($radius) {
+  @if $radius > 0 {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+}
+
+@mixin border-bottom-radius($radius) {
+  @if $radius > 0 {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+}
+
+// Removes extra space above text so that paddings become visually equal.
+// reference: https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
+@mixin line-height-crop($line-height) {
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}

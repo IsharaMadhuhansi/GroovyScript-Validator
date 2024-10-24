@@ -1,0 +1,30 @@
+@import 'mixins';
+@import '../../node_modules/@pagero/design-tokens/style/scss/variables';
+
+// Define standard form-height constant for Form components
+$form-item-height: 2.25rem;
+
+// Define standard box-shadows for things like input & button in different states
+$shadow-focus: 0 0 0 2px $pag-color-primary-light;
+$shadow-invalid: 0 0 0 1px $pag-color-error-base;
+$shadow-focus-invalid: 0 0 0 2px $pag-color-error-base;
+
+// Company colors used in avatars and company logos
+$pag-trading-partner-color-0: #191919;
+$pag-trading-partner-color-1: #a3a3a3;
+$pag-trading-partner-color-2: #395572;
+$pag-trading-partner-color-3: #8ea3b9;
+$pag-trading-partner-color-4: #474270;
+$pag-trading-partner-color-5: #7c3c63;
+$pag-trading-partner-color-6: #af88a1;
+$pag-trading-partner-color-7: #476b56;
+$pag-trading-partner-color-8: #80998a;
+$pag-trading-partner-color-9: #605039;
+$pag-trading-partner-color-10: #bd9f75;
+$pag-trading-partner-color-11: #8e5348;
+$pag-trading-partner-color-12: #a7837b;
+
+$breakpoint-sm: 480px;
+
+// Sidebar
+$sidebar-width: 24rem;

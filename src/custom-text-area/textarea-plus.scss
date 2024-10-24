@@ -1,0 +1,266 @@
+@use 'sass:math';
+//@import "~@pagero/design-tokens/style/scss/_variables.scss";
+
+@import '../css/globals';
+
+$textarea-vertical-padding: math.div($pag-size-icon-xxl * 2, 10);
+
+:host {
+  font-family: $pag-font-family;
+  font-size: $pag-font-size-md;
+}
+
+
+textarea {
+  display: inline-block;
+  box-sizing: border-box;
+  font-family: $pag-font-family;
+  font-size: $pag-font-size-md;
+  color: $pag-color-text-default;
+
+  border: 1;
+  padding: $textarea-vertical-padding $pag-space-sm;
+  border-radius: $pag-border-radius-sm;
+  min-height: $form-item-height;
+  width: 100%;
+  resize: none;
+
+  &:focus {
+    box-shadow: $shadow-focus;    
+    outline: none;
+
+    + #highlighting-pre {
+      background-color: $pag-color-palette-white;
+    }
+  }
+
+  &:disabled {
+    display: inline-block;
+    opacity: $pag-opacity-disabled;
+    cursor: not-allowed;
+  }
+
+  &::placeholder {
+    opacity: $pag-opacity-disabled;
+    color: $pag-color-text-secondary;
+  }
+}
+
+.pag-textarea-resizable {
+  resize: vertical;
+}
+
+label {
+  display: block;
+  font-family: $pag-font-family;
+  font-size: $pag-font-size-md;
+  color: $pag-color-text-secondary;
+  line-height: $pag-line-height-md;
+  margin-bottom: $pag-space-xxxs;
+
+  .pag-textarea-required {
+    color: $pag-color-error-base;
+  }
+}
+
+.pag-textarea-helper-text {
+  display: block;
+  color: $pag-color-text-secondary;
+  font-family: $pag-font-family;
+  font-size: $pag-font-size-sm;
+  line-height: $pag-line-height-md;
+  margin-top: -$pag-space-xxxs;
+  margin-left: 10px;
+}
+
+.pag-textarea-invalid {
+  box-shadow: $shadow-invalid;
+
+  &:focus {
+    box-shadow: $shadow-focus-invalid;
+  }
+}
+
+.pag-textarea-validation-message {
+  display: block;
+  font-family: $pag-font-family;
+  font-size: $pag-font-size-sm;
+  color: $pag-color-error-base;
+  margin-top: -$pag-space-xxxs;
+  margin-left: 10px;
+  &.pag-textarea-hidden {
+    display: none;
+  }
+}
+.label-row{
+  display: flex;
+  flex-direction: row;
+
+  label{
+    margin-left: 10px;
+  }
+}
+
+.beautify-button-styles {
+  margin-right: 0.5rem;
+  margin-left: auto;
+  padding: $pag-space-xs;
+  height: $pag-space-xl;
+  background-color: transparent;
+  color: $pag-color-primary-base;
+  border: $pag-border-width-default solid transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  border-radius: 2px;
+  transition: color 0.3s ease;
+}
+
+.beautify-button-styles:hover {
+  background-color: $pag-color-primary-base;
+  color: $pag-color-palette-white;
+}
+
+
+
+
+
+.host {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: $pag-font-size-md;
+}
+
+.container {
+  position: relative;
+  height: 365px;
+}
+
+#editing-textarea,
+#highlighting-pre {
+  margin: 10px;
+  padding: 10px;
+  width: calc(100% - 17px);
+  height: 350px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: $pag-font-size-md;
+  font-family: $pag-font-family;
+  white-space: nowrap;
+}
+
+#editing-textarea,
+#highlighting-pre,
+#highlighting-pre * {
+  line-height: 1.5;
+  tab-size: 2;
+}
+
+#error-label {
+  background: #dd5b5b;
+  margin: 5px;
+  padding: 5px;
+}
+
+#highlighting-pre {
+  z-index: 0;
+  overflow: hidden;
+  background-color: $pag-color-neutral-light;
+
+}
+
+#editing-textarea {
+  color: transparent;
+  background: transparent;
+  caret-color: rgb(0, 0, 0);
+  z-index: 1;
+  resize: vertical;
+  overflow: auto;
+}
+
+#highlighting-content {
+  margin: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  font-family: $pag-font-family;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.string {
+  color: green;
+}
+
+.number {
+  color: darkorange;
+}
+
+.boolean {
+  color: blue;
+}
+
+.xml-tag {
+  color: #0065d3;
+}
+
+.xml-tag-name {
+  color: #b35151;
+}
+
+.xml-attr {
+  color: #dd9f5b;
+}
+
+.xml-attr-value {
+  color: green;
+}
+
+.xml-declaration {
+  color: #dd5b5b;
+}
+
+.null {
+  color: magenta;
+}
+
+.key {
+  color: red;
+}
+
+
+
+.error-mark {
+  border-bottom: 4px dotted rgb(255, 0, 0);
+}
+
+
+
+.select-type {
+  position: relative;
+  height: 2.25rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  color: $pag-color-primary-base;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #fff;
+  margin: 0.5rem;
+  outline: none;
+  border: $pag-border-width-default #53ba86;
+}
